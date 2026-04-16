@@ -30,5 +30,31 @@
         <input type="text" name="name" placeholder="Nimesi">
         <button type="submit">Lähetä</button>
     </form>
+<div style="text-align: center; margin-top: 20px;">
+    <h2>Vierailijat:</h2>
+    <ul id="visitorList" style="display: inline-block; text-align: left;"></ul>
+</div>
+
+<script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.querySelector('input[name="name"]').value.trim();
+        if (name) {
+            const visitorList = document.getElementById('visitorList');
+            const existingNames = Array.from(visitorList.querySelectorAll('li')).map(li => li.textContent);
+            
+            if (!existingNames.includes(name)) {
+                const li = document.createElement('li');
+                li.textContent = name;
+                visitorList.appendChild(li);
+                
+                if (visitorList.children.length > 10) {
+                    visitorList.removeChild(visitorList.firstChild);
+                }
+            }
+            document.querySelector('input[name="name"]').value = '';
+        }
+    });
+</script>
 </body>
 </html>
