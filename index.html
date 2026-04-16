@@ -6,9 +6,27 @@
     <title>Joonan Webbisivu</title>
 </head>
 <body>
-    <h1 style="color: black; text-align: center;">Tervetuloa Joonan Webbisivulle</h1>
-    <p style="color: black; text-align: center;">Lisää nimesi vaikka vierailija listalle</p>
-    <form action="submit_name" method="post" style="text-align: center;">
+  <style>
+    .sway-container {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 */
+    }
+    .sway-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>  
+<div class="sway-container">
+<iframe width="760px" height="500px" src="https://sway.cloud.microsoft/s/A8jnCgkrEIElerOr/embed" frameborder="0" marginheight="0" marginwidth="0" max-width="100%" sandbox="allow-forms allow-modals allow-orientation-lock allow-popups allow-same-origin allow-scripts" scrolling="no" style="border: none; max-width: 100%; max-height: 100vh" allowfullscreen mozallowfullscreen msallowfullscreen webkitallowfullscreen></iframe>
+</div>
+    <h1 style="color: black; text-align: center; margin: 20px 0 10px 0;">Tervetuloa Joonan Webbisivulle</h1>
+    <p style="color: black; text-align: center; margin: 5px 0;">Lisää nimesi vaikka vierailija listalle</p>
+    <form action="submit_name" method="post" style="text-align: center; margin-bottom: 20px;">
         <input type="text" name="name" placeholder="Nimesi">
         <button type="submit">Lähetä</button>
     </form>
