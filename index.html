@@ -1,66 +1,234 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website Title</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Kyberturvallisuus muistitikku</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            background-color: #121212;
+            background-color: #0a0e27;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1f3a 0%, #2d3561 100%);
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 3px solid #ff4444;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
             color: #ffffff;
-            font-family: Arial, sans-serif;
+            text-shadow: 0 2px 10px rgba(255, 68, 68, 0.3);
         }
+
+        header p {
+            font-size: 1.1em;
+            color: #ffb347;
+            letter-spacing: 1px;
+        }
+
         nav {
-            background-color: #ffb300; /* Amber */
-            padding: 15px;
-            transition: background-color 0.3s ease;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 25px 20px;
+            background-color: #0f1429;
+            flex-wrap: wrap;
         }
+
         nav a {
-            color: #121212; /* Dark text on amber background */
-            margin: 0 15px;
+            color: #ffb347;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 68, 68, 0.2);
+            color: #ff6b6b;
+            border-color: #ff4444;
+            transform: translateY(-2px);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            padding-bottom: 100px;
+        }
+
+        section {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section.active {
+            display: block;
+        }
+
+        h2, h3 {
+            color: #ff6b6b;
+            margin: 25px 0 15px 0;
+            font-size: 1.8em;
+        }
+
+        h3 {
+            font-size: 1.5em;
+        }
+
+        section p {
+            margin-bottom: 15px;
+            font-size: 1em;
+            color: #d0d0d0;
+            line-height: 1.8;
+        }
+
+        section ul {
+            margin: 20px 0 20px 30px;
+        }
+
+        section li {
+            margin: 12px 0;
+            color: #d0d0d0;
+            font-size: 1em;
+        }
+
+        section li:before {
+            content: "▶ ";
+            color: #ff4444;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        a {
+            color: #ffb347;
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        h1, h2, h3 {
-            color: red; /* Red headings */
+
+        a:hover {
+            color: #ff6b6b;
+            text-decoration: underline;
         }
-        .hidden-section {
-            display: none;
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #0f1429;
+            border-top: 2px solid #ff4444;
+            color: #ffb347;
+            font-size: 0.95em;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 0.95em;
+                padding: 6px 12px;
+            }
+
+            h2, h3 {
+                font-size: 1.4em;
+            }
         }
     </style>
 </head>
 <body>
-
-<nav>
-    <a href="#tuote">Tuote</a>
-    <a href="#ominaisuudet">Ominaisuudet</a>
-    <a href="#yhteystiedot">Yhteystiedot</a>
-</nav>
-
-<section id="tuote">
-    <h1>Tuote</h1>
-    <p>Original content about the product...</p>
-</section>
-<section id="ominaisuudet">
-    <h2>Ominaisuudet</h2>
-    <p>Original features content...</p>
-</section>
-<section id="yhteystiedot">
-    <h3>Yhteystiedot</h3>
-    <p>Original contact content...</p>
-</section>
-
-<script>
-    function toggleHiddenSection() {
-        var section = document.querySelector('.hidden-section');
-        if (section.style.display === 'none') {
-            section.style.display = 'block';
-        } else {
-            section.style.display = 'none';
+    <header>
+        <h1>Kyberturvallisuus muistitikku</h1>
+        <p>Äärimmäisin ratkaisu datan varastointiin!</p>
+    </header>
+    <nav>
+        <a href="#product" onclick="showSection(event, 'product')">Tuote</a>
+        <a href="#features" onclick="showSection(event, 'features')">Ominaisuudet</a>
+        <a href="#contact" onclick="showSection(event, 'contact')">Yhteystiedot</a>
+    </nav>
+    <main>
+        <section id="product">
+            <h2>Tuotteesta</h2>
+            <p>Tämä kyberturvallisuus-USB-muistitikku on suunniteltu niille, jotka asettavat tietoturvan etusijalle. Huippuluokan salaus- ja turvaominaisuuksien ansiosta se varmistaa, että arkaluontoiset tiedostot säilyvät turvassa kaikkina aikoina.</p>
+            <p>Kehittyneen teknologian avulla muistitikku tarjoaa saumattoman käyttäjäkokemuksen ilman turvallisuuden kompromisseja.</p>
+        </section>
+        <section id="features">
+            <h3>Turvallisuus ominaisuudet</h3>
+            <ul>
+                <li>Kehittyneet salausprotokollat</li>
+                <li>Reaaliaikainen haittaohjelmien tarkistus</li>
+                <li>Turvalliset tiedostojen jakamisominaisuudet</li>
+                <li>Kestävä muotoilu liikkeelläoloon</li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h3>Ota yhteyttä</h3>
+            <p>Haluatko tietää lisää? Ota yhteyttä meihin osoitteessa <a href="mailto:info@kyberturvallisuus.fi">info@kyberturvallisuus.fi</a>.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Joona Syvalahti inc.</p>
+    </footer>
+    <script>
+        function showSection(event, sectionId) {
+            event.preventDefault();
+            
+            // Hide all sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show the selected section
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+            }
         }
-    }
-</script>
-
+        
+        // Show the first section (product) by default on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            const firstSection = document.getElementById('product');
+            if (firstSection) {
+                firstSection.classList.add('active');
+            }
+        });
+    </script>
 </body>
 </html>
