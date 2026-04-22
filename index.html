@@ -170,15 +170,35 @@
                 font-size: 1.4em;
             }
         }
+        .features-list {
+            list-style: none;
+            margin-left: 0;
+            padding-left: 0;
+        }
 
         .features-list li {
-            margin-bottom: 1.5rem; /* väli kohtien väliin */
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 1.6rem;
             line-height: 1.6;
+        }
+
+        .features-list li::before {
+            content: "▶";
+            color: #ff4444;
+            font-weight: bold;
+            margin-top: 0.25rem; /* kohdistuu otsikon ylälinjaan */
+            flex-shrink: 0;
         }
 
         .features-list li strong {
             display: block;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .features-list li p {
+            margin: 0;
         }
 
     </style>
@@ -202,33 +222,67 @@
         <p>Tämä kyberturvallisuus-USB-muistitikku on suunniteltu niille, jotka asettavat tietoturvan etusijalle.</p>
         <p>Kehittyneen teknologian avulla muistitikku tarjoaa saumattoman käyttäjäkokemuksen ilman turvallisuuden kompromisseja.</p>
         </section>
-
-       <section id="features">
+        <section id="features">
             <h3>Turvallisuusominaisuudet</h3>
             <ul class="features-list">
                 <li>
-                    <strong>Kehittyneet salausprotokollat</strong><br>
-                    Kaikki tiedonsiirto ja tallennus suojataan ajantasaisilla salausmenetelmillä, jotka estävät luvattoman pääsyn ja tietovuodot.
+                    <div class="feature-item">
+                        <strong>Kehittyneet salausprotokollat</strong>
+                        <p>
+                            Kaikki tiedonsiirto ja tallennus suojataan ajantasaisilla salausmenetelmillä,
+                            jotka estävät luvattoman pääsyn ja tietovuodot.
+                        </p>
+                    </div>
                 </li>
+
                 <li>
-                    <strong>Reaaliaikainen haittaohjelmien tarkistus</strong><br>
-                    Järjestelmä analysoi jatkuvasti tietoliikennettä ja tiedostoja, tunnistaen uhat ennen kuin ne ehtivät aiheuttaa vahinkoa.
+                    <div class="feature-item">
+                        <strong>Reaaliaikainen haittaohjelmien tarkistus</strong>
+                        <p>
+                            Järjestelmä analysoi jatkuvasti tietoliikennettä ja tiedostoja,
+                            tunnistaen uhat ennen kuin ne ehtivät aiheuttaa vahinkoa.
+                        </p>
+                    </div>
                 </li>
+
                 <li>
-                    <strong>Turvalliset tiedostojen jakamisominaisuudet</strong><br>
-                    Mahdollistaa suojatun tiedostojen jaon käyttöoikeuksilla, lokituksella ja aikarajoitetuilla linkeillä.
+                    <div class="feature-item">
+                        <strong>Turvalliset tiedostojen jakamisominaisuudet</strong>
+                        <p>
+                            Mahdollistaa suojatun tiedostojen jaon käyttöoikeuksilla,
+                            lokituksella ja aikarajoitetuilla linkeillä.
+                        </p>
+                    </div>
                 </li>
+
                 <li>
-                    <strong>Kestävä muotoilu liikkeelläoloon</strong><br>
-                    Ratkaisu on suunniteltu toimimaan luotettavasti myös mobiiliympäristöissä ja etätyössä.
+                    <div class="feature-item">
+                        <strong>Kestävä muotoilu liikkeelläoloon</strong>
+                        <p>
+                            Ratkaisu on suunniteltu toimimaan luotettavasti myös
+                            mobiiliympäristöissä ja etätyössä.
+                        </p>
+                    </div>
                 </li>
+
                 <li>
-                    <strong>Käyttäjien tunnistautuminen ja käyttöoikeuksien hallinta</strong><br>
-                    Monivaiheinen tunnistautuminen ja yksityiskohtainen roolinhallinta varmistavat, että vain oikeat henkilöt pääsevät tietoihin.
+                    <div class="feature-item">
+                        <strong>Käyttäjien tunnistautuminen ja käyttöoikeuksien hallinta</strong>
+                        <p>
+                            Monivaiheinen tunnistautuminen ja yksityiskohtainen roolinhallinta
+                            varmistavat, että vain oikeat henkilöt pääsevät tietoihin.
+                        </p>
+                    </div>
                 </li>
+
                 <li>
-                    <strong>Jatkuva valvonta ja lokitus</strong><br>
-                    Kaikki tapahtumat kirjataan ja analysoidaan, mikä helpottaa poikkeamien havaitsemista ja auditointeja.
+                    <div class="feature-item">
+                        <strong>Jatkuva valvonta ja lokitus</strong>
+                        <p>
+                            Kaikki tapahtumat kirjataan ja analysoidaan,
+                            mikä helpottaa poikkeamien havaitsemista ja auditointeja.
+                        </p>
+                    </div>
                 </li>
             </ul>
         </section>
