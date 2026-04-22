@@ -170,6 +170,17 @@
                 font-size: 1.4em;
             }
         }
+
+        .features-list li {
+            margin-bottom: 1.5rem; /* väli kohtien väliin */
+            line-height: 1.6;
+        }
+
+        .features-list li strong {
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
     </style>
 </head>
 <body>
@@ -182,24 +193,70 @@
         <a href="#features" onclick="showSection(event, 'features')">Ominaisuudet</a>
         <a href="#contact" onclick="showSection(event, 'contact')">Yhteystiedot</a>
     </nav>
-    <main>
+    <main>    
         <section id="product">
-            <h2>Tuotteesta</h2>
-            <p>Tämä kyberturvallisuus-USB-muistitikku on suunniteltu niille, jotka asettavat tietoturvan etusijalle. Huippuluokan salaus- ja turvaominaisuuksien ansiosta se varmistaa, että arkaluontoiset tiedostot säilyvät turvassa kaikkina aikoina.</p>
-            <p>Kehittyneen teknologian avulla muistitikku tarjoaa saumattoman käyttäjäkokemuksen ilman turvallisuuden kompromisseja.</p>
+        <h2>Tuotteesta</h2>
+
+        <img src="muistitikkukuva1.png" alt="Salattu kyberturvallisuus-USB" style="width: 100%; max-width: 400px; margin: 20px auto; display: block">
+
+        <p>Tämä kyberturvallisuus-USB-muistitikku on suunniteltu niille, jotka asettavat tietoturvan etusijalle.</p>
+        <p>Kehittyneen teknologian avulla muistitikku tarjoaa saumattoman käyttäjäkokemuksen ilman turvallisuuden kompromisseja.</p>
         </section>
-        <section id="features">
-            <h3>Turvallisuus ominaisuudet</h3>
-            <ul>
-                <li>Kehittyneet salausprotokollat</li>
-                <li>Reaaliaikainen haittaohjelmien tarkistus</li>
-                <li>Turvalliset tiedostojen jakamisominaisuudet</li>
-                <li>Kestävä muotoilu liikkeelläoloon</li>
+
+       <section id="features">
+            <h3>Turvallisuusominaisuudet</h3>
+            <ul class="features-list">
+                <li>
+                    <strong>Kehittyneet salausprotokollat</strong><br>
+                    Kaikki tiedonsiirto ja tallennus suojataan ajantasaisilla salausmenetelmillä, jotka estävät luvattoman pääsyn ja tietovuodot.
+                </li>
+                <li>
+                    <strong>Reaaliaikainen haittaohjelmien tarkistus</strong><br>
+                    Järjestelmä analysoi jatkuvasti tietoliikennettä ja tiedostoja, tunnistaen uhat ennen kuin ne ehtivät aiheuttaa vahinkoa.
+                </li>
+                <li>
+                    <strong>Turvalliset tiedostojen jakamisominaisuudet</strong><br>
+                    Mahdollistaa suojatun tiedostojen jaon käyttöoikeuksilla, lokituksella ja aikarajoitetuilla linkeillä.
+                </li>
+                <li>
+                    <strong>Kestävä muotoilu liikkeelläoloon</strong><br>
+                    Ratkaisu on suunniteltu toimimaan luotettavasti myös mobiiliympäristöissä ja etätyössä.
+                </li>
+                <li>
+                    <strong>Käyttäjien tunnistautuminen ja käyttöoikeuksien hallinta</strong><br>
+                    Monivaiheinen tunnistautuminen ja yksityiskohtainen roolinhallinta varmistavat, että vain oikeat henkilöt pääsevät tietoihin.
+                </li>
+                <li>
+                    <strong>Jatkuva valvonta ja lokitus</strong><br>
+                    Kaikki tapahtumat kirjataan ja analysoidaan, mikä helpottaa poikkeamien havaitsemista ja auditointeja.
+                </li>
             </ul>
         </section>
+
         <section id="contact">
             <h3>Ota yhteyttä</h3>
-            <p>Haluatko tietää lisää? Ota yhteyttä meihin osoitteessa <a href="mailto:info@kyberturvallisuus.fi">info@kyberturvallisuus.fi</a>.</p>
+            <p>
+                Haluatko tietää lisää? Ota yhteyttä meihin osoitteessa
+                <a href="mailto:info@kyberturvallisuus.fi">info@kyberturvallisuus.fi</a>.
+            </p>
+
+            <ul>
+                <li>Puhelin: +358 123 4567</li>
+                <li>Osoite: Kyberturvallisuus Oy, Esimerkkikatu 1, 00100 Helsinki</li>
+            </ul>
+
+            <!-- Google Maps -kartta -->
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps?q=Esimerkkikatu+1,+Helsinki&output=embed"
+                    width="100%"
+                    height="300"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
         </section>
     </main>
     <footer>
