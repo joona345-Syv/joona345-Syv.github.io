@@ -1,58 +1,66 @@
 <!DOCTYPE html>
-<html lang="fi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kyberturvallisuus</title>
+    <title>Your Website Title</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: #0a0e27;
+            background-color: #121212;
             color: #ffffff;
             font-family: Arial, sans-serif;
         }
+        nav {
+            background-color: #ffb300; /* Amber */
+            padding: 15px;
+            transition: background-color 0.3s ease;
+        }
+        nav a {
+            color: #121212; /* Dark text on amber background */
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
         h1, h2, h3 {
-            color: #ff6b6b;
+            color: red; /* Red headings */
         }
-        a {
-            color: #ffb347;
-        }
-        .active {
-            font-weight: bold;
-            text-decoration: underline;
+        .hidden-section {
+            display: none;
         }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="#" onclick="showSection('home')">Etusivu</a>
-        <a href="#" onclick="showSection('about')">Tietoa</a>
-        <a href="#" onclick="showSection('services')">Palvelut</a>
-        <a href="#" onclick="showSection('contact')">Ota yhteyttä</a>
-    </nav>
-    <section id="home" class="active">
-        <h1>Tervetuloa kyberturvallisuussivustolle</h1>
-        <p>Tässä sivustossa löydät ajankohtaisia tietoja kyberturvallisuudesta, työkaluista ja parhaita käytäntöjä.</p>
-    </section>
-    <section id="about">
-        <h2>Tietoa meistä</h2>
-        <p>Olemme kyberturvallisuuden asiantuntijoita, jotka tarjoavat tietoa ja resursseja tietoturvan parantamiseksi.</p>
-    </section>
-    <section id="services">
-        <h2>Palvelumme</h2>
-        <p>Tarjoamme konsultointia, koulutusta ja tukea kaikille kyberturvallisuuteen liittyville tarpeille.</p>
-    </section>
-    <section id="contact">
-        <h2>Ota yhteyttä</h2>
-        <p>Voit tavoittaa meidät sähköpostitse tai soittamalla.</p>
-    </section>
-    <script>
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-            document.getElementById(sectionId).classList.add('active');
+
+<nav>
+    <a href="#tuote">Tuote</a>
+    <a href="#ominaisuudet">Ominaisuudet</a>
+    <a href="#yhteystiedot">Yhteystiedot</a>
+</nav>
+
+<section id="tuote">
+    <h1>Tuote</h1>
+    <p>Original content about the product...</p>
+</section>
+<section id="ominaisuudet">
+    <h2>Ominaisuudet</h2>
+    <p>Original features content...</p>
+</section>
+<section id="yhteystiedot">
+    <h3>Yhteystiedot</h3>
+    <p>Original contact content...</p>
+</section>
+
+<script>
+    function toggleHiddenSection() {
+        var section = document.querySelector('.hidden-section');
+        if (section.style.display === 'none') {
+            section.style.display = 'block';
+        } else {
+            section.style.display = 'none';
         }
-    </script>
+    }
+</script>
+
 </body>
 </html>
