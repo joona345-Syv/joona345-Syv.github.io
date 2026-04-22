@@ -1,88 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Webpage</title>
+    <title>Kyberturvallisuus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #0a0e27;
+            color: #ffffff;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
+            transition: background-color 0.5s ease;
         }
-        header {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
+        h1, h2, h3 {
+            color: #ffb347;
         }
-        h1 {
-            font-size: 2.5em;
-            margin: 0;
-        }
-        nav {
-            margin: 20px 0;
-        }
-        nav a {
-            margin: 0 15px;
-            color: #007bff;
+        a {
+            color: #ff6b6b;
             text-decoration: none;
         }
-        form {
-            margin: 20px;
+        a:hover {
+            text-decoration: underline;
+            color: #ffb347;
+        }
+        header {
+            background: linear-gradient(to right, #0a0e27, #ffb347);
             padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: white;
+            text-align: center;
+            animation: fadeIn 1s;
         }
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-        input[type="submit"] {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
         }
         footer {
             text-align: center;
-            padding: 15px;
-            background-color: #007bff;
-            color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            padding: 20px;
+            background-color: #212d44;
+        }
+        @media (max-width: 600px) {
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+            body {
+                padding: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Modern Webpage</h1>
+        <h1>Kyberturvallisuus</h1>
         <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+            <ul>
+                <li><a href="#home">Koti</a></li>
+                <li><a href="#services">Palvelut</a></li>
+                <li><a href="#contact">Yhteystiedot</a></li>
+            </ul>
         </nav>
     </header>
-    <form action="#">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-        <input type="submit" value="Submit">
-    </form>
+    <main>
+        <section id="home">
+            <h2>Tervetuloa Kyberturvallisuus Sivustolle</h2>
+            <p>Tämä sivusto tarjoaa tietoa kyberturvallisuudesta. Olemme sitoutuneet tarjoamaan korkealaatuista sisältöä suomeksi.</p>
+        </section>
+        <section id="services">
+            <h2>Palvelumme</h2>
+            <ul>
+                <li>Tietoisuus ja koulutus</li>
+                <li>Esteiden poistaminen</li>
+                <li>Riskianalyysi ja arviointi</li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Ota Yhteyttä</h2>
+            <p>Voit ottaa meihin yhteyttä sähköpostitse: info@kyberturvallisuus.fi</p>
+        </section>
+    </main>
     <footer>
-        <p>&copy; 2026 My Modern Webpage</p>
+        <p>&copy; 2026 Kyberturvallisuus. Kaikki oikeudet pidätetään.</p>
     </footer>
 </body>
 </html>
