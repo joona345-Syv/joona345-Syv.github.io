@@ -22,12 +22,22 @@
             color: yellow;
             text-decoration: none;
             margin: 0 15px;
+            cursor: pointer;
+        }
+        nav a:hover {
+            text-decoration: underline;
         }
         h1 {
             font-size: 2.5em;
         }
         h2, h3 {
             color: red;
+        }
+        section {
+            display: none;
+        }
+        section.active {
+            display: block;
         }
         footer {
             text-align: center;
@@ -44,14 +54,14 @@
         <p>Äärimmäisin ratkaisu datan varastointiin!</p>
     </header>
     <nav>
-        <a href="#product">Tuote</a>
-        <a href="#features">Ominaisuudet</a>
-        <a href="#contact">Yhteystiedot</a>
+        <a href="#product" onclick="showSection(event, 'product')">Tuote</a>
+        <a href="#features" onclick="showSection(event, 'features')">Ominaisuudet</a>
+        <a href="#contact" onclick="showSection(event, 'contact')">Yhteystiedot</a>
     </nav>
     <main>
         <section id="product">
             <h2>Tuotteesta</h2>
-            <p>Tämä kyberturvallisuus-USB-muistitikku on suunniteltu niille, jotka asettavat tietoturvan etusijalle. Huippuluokan salaus- ja turvaominaisuuksien ansiosta se varmistaa, että arkaluontoiset tietosi ovat suojattuja luvattomalta käytöltä.</p>
+            <p>Tämä kyberturvallisuus-USB-muistitikku on suunniteltu niille, jotka asettavat tietoturvan etusijalle. Huippuluokan salaus- ja turvaominaisuuksien ansiosta se varmistaa, että arkaluonteiset tiedot pysyvät turvassa.</p>
         </section>
         <section id="features">
             <h3>Turvallisuus ominaisuudet</h3>
@@ -70,5 +80,30 @@
     <footer>
         <p>&copy; 2026 Joona Syvalahti inc.</p>
     </footer>
+    <script>
+        function showSection(event, sectionId) {
+            event.preventDefault();
+            
+            // Hide all sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show the selected section
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+            }
+        }
+        
+        // Show the first section (product) by default on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            const firstSection = document.getElementById('product');
+            if (firstSection) {
+                firstSection.classList.add('active');
+            }
+        });
+    </script>
 </body>
 </html>
