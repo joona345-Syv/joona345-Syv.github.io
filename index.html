@@ -1,48 +1,63 @@
 <!DOCTYPE html>
-<html lang="fi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kyberturvallisuus muistitikku</title>
+    <title>Modern Webpage</title>
     <style>
         body {
-            background-color: black;
-            color: white;
             font-family: Arial, sans-serif;
             line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
         }
         header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
             text-align: center;
-            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
         }
         nav {
             margin: 20px 0;
         }
         nav a {
-            color: yellow;
-            text-decoration: none;
             margin: 0 15px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        form {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: white;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
             cursor: pointer;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        h1 {
-            font-size: 2.5em;
-        }
-        h2, h3 {
-            color: red;
-        }
-        section {
-            display: none;
-        }
-        section.active {
-            display: block;
         }
         footer {
             text-align: center;
-            padding: 10px 0;
-            position: absolute;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            position: relative;
             bottom: 0;
             width: 100%;
         }
@@ -50,60 +65,24 @@
 </head>
 <body>
     <header>
-        <h1>Kyberturvallisuus muistitikku</h1>
-        <p>Äärimmäisin ratkaisu datan varastointiin!</p>
+        <h1>Welcome to My Modern Webpage</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
     </header>
-    <nav>
-        <a href="#product" onclick="showSection(event, 'product')">Tuote</a>
-        <a href="#features" onclick="showSection(event, 'features')">Ominaisuudet</a>
-        <a href="#contact" onclick="showSection(event, 'contact')">Yhteystiedot</a>
-    </nav>
-    <main>
-        <section id="product">
-            <h2>Tuotteesta</h2>
-            <p>Tämä kyberturvallisuus-USB-muistitikku on suunniteltu niille, jotka asettavat tietoturvan etusijalle. Huippuluokan salaus- ja turvaominaisuuksien ansiosta se varmistaa, että arkaluonteiset tiedot pysyvät turvassa.</p>
-        </section>
-        <section id="features">
-            <h3>Turvallisuus ominaisuudet</h3>
-            <ul>
-                <li>Kehittyneet salausprotokollat</li>
-                <li>Reaaliaikainen haittaohjelmien tarkistus</li>
-                <li>Turvalliset tiedostojen jakamisominaisuudet</li>
-                <li>Kestävä muotoilu liikkeelläoloon</li>
-            </ul>
-        </section>
-        <section id="contact">
-            <h3>Ota yhteyttä</h3>
-            <p>Haluatko tietää lisää? Ota yhteyttä meihin osoitteessa <a href="mailto:info@kyberturvallisuus.fi">info@kyberturvallisuus.fi</a>.</p>
-        </section>
-    </main>
+    <form action="#">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        <input type="submit" value="Submit">
+    </form>
     <footer>
-        <p>&copy; 2026 Joona Syvalahti inc.</p>
+        <p>&copy; 2026 My Modern Webpage</p>
     </footer>
-    <script>
-        function showSection(event, sectionId) {
-            event.preventDefault();
-            
-            // Hide all sections
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-            
-            // Show the selected section
-            const selectedSection = document.getElementById(sectionId);
-            if (selectedSection) {
-                selectedSection.classList.add('active');
-            }
-        }
-        
-        // Show the first section (product) by default on page load
-        window.addEventListener('DOMContentLoaded', function() {
-            const firstSection = document.getElementById('product');
-            if (firstSection) {
-                firstSection.classList.add('active');
-            }
-        });
-    </script>
 </body>
 </html>
