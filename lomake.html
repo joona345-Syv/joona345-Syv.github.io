@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lomake</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="contact">
+    <header>
+        <h1>Lomake</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Etusivu</a></li>
+                <li><a href="tuotteet.html">Tuotteet</a></li>
+                <li><a href="lomake.html">Lomake</a></li>
+            </ul>
+        </nav>
+    </header>
+    <form action="https://formspree.io/f/mqewrjql" method="post">
+        <h2>Yhteydenotto lomake</h2>
+        <div class="contact-form">
+            <label for="etunimi">Nimi:</label>
+            <br></br>
+            <input type="text" id="etunimi" name="etunimi" required><br><br>
+        </div>
+        <div class="contact-form">
+            <label for="sukunimi">Sukunimi:</label>
+            <br><br>
+            <input type="text" id="sukunimi" name="sukunimi" required><br><br>
+        </div>
+        <div class="contact-form">
+            <label for="email">Sähköposti:</label>
+            <br><br>
+            <input type="email" id="email" name="email" required><br><br>
+        </div>
+        <div class="contact-form">
+            <legend> Mikä on sukupuolesi? </legend>
+            <br></br>
+            Mies <input type="radio" id="mies" name="sukupuoli" value="mies" required>
+            Nainen <input type="radio" id="nainen" name="sukupuoli" value="nainen" required>
+            Muu <input type="radio" id="muu" name="sukupuoli" value="muu" required><br><br>
+        </div>
+        <div class="contact-form">
+            <label for="ikäluokka">Ikäluokka:</label>
+            <br><br>
+            <select id="ikäluokka" name="ikäluokka" required>
+                <option value="">Valitse ikäluokka</option>
+                <option value="lapsi">0-12</option>
+                <option value="nuori">13-25</option>
+                <option value="aikuiset">26-55</option>
+                <option value="vanhat">56+</option>
+            </select><br><br>
+        </div>
+        <input type="submit" value="Lähetä">
+    </form>
+
+</body>
+<footer>
+    <p>&copy; 2026 Syvälahti inc. Kaikki oikeudet pidätetään.</p>
+</html>
