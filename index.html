@@ -10,10 +10,18 @@
 
 
 <header>
-    <div class="header-content">
-        <img src="kuvat/vappulogo.png" alt="Logo" class="logo">
+<div class="header-content">
+    <div class="header-left">
+        <img src="kuvat/vappulogo.png" class="logo">
         <h1>Etusivu</h1>
     </div>
+
+    <button id="musicToggle" class="music-control">🔊</button>       
+        <audio id="bgMusic" loop>
+        <source src="music/vapputaustamus.mp3" type="audio/mpeg">
+        </audio>
+
+</div>
 
     <nav>
         <ul>
@@ -86,5 +94,6 @@ function toggleVideo() {
     }
 }
 </script>
+<script src="script.js"></script>
 </body>
 </html>

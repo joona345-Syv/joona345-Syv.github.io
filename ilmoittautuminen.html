@@ -9,10 +9,18 @@
 <body>
 
 <header>
-    <div class="header-content">
+<div class="header-content">
+    <div class="header-left">
         <img src="kuvat/vappulogo.png" class="logo">
-        <h1>Ilmoittautuminen</h1>
+        <h1>Etusivu</h1>
     </div>
+
+    <button id="musicToggle" class="music-control">🔊</button>
+        <audio id="bgMusic" loop>
+        <source src="music/vapputaustamus.mp3" type="audio/mpeg">
+        </audio>
+
+</div>
         <nav>
         <ul>
             <li><a href="index.html">Etusivu</a></li>
@@ -80,5 +88,6 @@ document.getElementById("signupForm").addEventListener("submit", function(e) {
     });
 });
 </script>
+<script src="script.js"></script>
 </body>
 </html>

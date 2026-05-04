@@ -24,12 +24,42 @@ header {
   padding: 15px 20px;
 }
 
-/* Container for logo + title */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .header-content {
-  display: flex;
-  align-items: center;   /* vertical alignment */
-  justify-content: flex-start;
-  gap: 100px;             /* space between logo and title */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* ✅ levittää elementit */
+}
+
+/* Vasen ryhmä (logo + otsikko) */
+.header-content h1 {
+    margin-left: 40px;
+}
+
+/* Musiikkinappi headerissa */
+.music-control {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+
+    width: 60px;
+    height: 60px;
+
+    font-size: 24px;
+    cursor: pointer;
+
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: all 0.2s ease;
+}
+
+.music-control:hover {
+    background-color: #ffd166;
+    transform: scale(1.1);
 }
 
 /* Logo styling */
