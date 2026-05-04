@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vappusivu</title>
+    <link rel="stylesheet" href="tyylit.css">
+</head>
+<body>
+
+
+<header>
+    <div class="header-content">
+        <img src="kuvat/vappulogo.png" alt="Logo" class="logo">
+        <h1>Etusivu</h1>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Etusivu</a></li>
+            <li><a href="opiskelijat.html">Opiskelijavappu Lahdessa</a></li>
+            <li><a href="tori.html">Lahden tori</a></li>
+            <li><a href="tapahtumat.html">Tapahtumat ja musiikki</a></li>
+            <li><a href="ilmoittautuminen.html">Ilmoittautuminen</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- 🎥 Video-osio -->
+<section class="hero">
+    <video autoplay muted loop class="hero-video" id="heroVideo">
+        <source src="kuvat/vappuvideo.mp4" type="video/mp4">
+        Selaimesi ei tue videota.
+    </video>
+    <button class="video-control" onclick="toggleVideo()">⏸</button>
+
+    <div class="hero-text">
+        <h2>Vappu Lahdessa 🎈</h2>
+        <p>Tervetuloa juhlimaan kevään hauskinta aikaa!</p>
+    </div>
+</section>
+
+<!-- 📦 Sisältö -->
+<main class="container">
+
+    <div class="card">
+        <h2>Tervetuloa!</h2>
+        <p>
+            Vappu on ilon, opiskelijoiden ja kevään juhla! Lahdessa järjestetään
+            tapahtumia, musiikkia ja hauskaa tekemistä kaikenikäisille.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Mitä voit odottaa?</h2>
+        <ul>
+            <li>🎵 Live-musiikkia</li>
+            <li>🎈 Ilmapalloja ja koristelua</li>
+            <li>🥳 Hauskoja tapahtumia</li>
+            <li>🎓 Opiskelijaperinteitä</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Liity mukaan!</h2>
+        <p>Ilmoittaudu tapahtumiin ja tule kokemaan vappu parhaimmillaan.</p>
+        <a href="ilmoittautuminen.html" class="button">Ilmoittaudu</a>
+    </div>
+
+</main>
+
+<footer>
+    <p>© 2026 Vappu Lahti</p>
+</footer>
+<script>
+function toggleVideo() {
+    const video = document.getElementById("heroVideo");
+    const button = document.querySelector(".video-control");
+
+    if (video.paused) {
+        video.play();
+        button.textContent = "⏸"; // pause-ikoni
+    } else {
+        video.pause();
+        button.textContent = "▶"; // play-ikoni
+    }
+}
+</script>
+</body>
+</html>

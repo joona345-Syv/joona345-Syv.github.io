@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilmoittautuminen</title>
+    <link rel="stylesheet" href="tyylit.css">
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <img src="kuvat/vappulogo.png" class="logo">
+        <h1>Ilmoittautuminen</h1>
+    </div>
+        <nav>
+        <ul>
+            <li><a href="index.html">Etusivu</a></li>
+            <li><a href="opiskelijat.html">Opiskelijavappu Lahdessa</a></li>
+            <li><a href="tori.html">Lahden tori</a></li>
+            <li><a href="tapahtumat.html">Tapahtumat ja musiikki</a></li>
+            <li><a href="ilmoittautuminen.html">Ilmoittautuminen</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container">
+
+    <div class="card">
+        <h2>Ilmoittaudu mukaan ✍️</h2>
+        <p>Täytä lomake osallistuaksesi tapahtumiin.</p>
+
+        <form id="signupForm">
+            <label>Nimi:</label><br>
+            <input type="text" name="nimi" required><br><br>
+
+            <label>Email:</label><br>
+            <input type="email" name="email" required><br><br>
+
+            <label>Tapahtuma:</label><br>
+            <select name="tapahtuma">
+                <option>Opiskelijabileet</option>
+                <option>Toritapahtuma</option>
+                <option>Konsertti</option>
+            </select><br><br>
+
+            <button type="submit" class="button">Lähetä</button>
+        </form>
+
+        <p id="status"></p>
+    </div>
+
+</main>
+
+<footer>
+    <p>© 2026 Vappu Lahti</p>
+</footer>
+<script>
+    document.getElementById("signupForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+
+    const data = {
+        nimi: form.nimi.value,
+        email: form.email.value,
+        tapahtuma: form.tapahtuma.value
+    };
+
+    const status = document.getElementById("status");
+
+    try {
+        const response = await fetch("https://script.google.com/macros/s/AKfycbyDqZ4UEdSkESVyIkiqZYtvrBwrJ2VbwU-feIOMnZAxqnrxByd-i6AlR--dgtZ6Yj1Tgw/exec", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (result.status === "ok") {
+            status.textContent = "✅ Ilmoittautuminen onnistui!";
+            form.reset();
+        } else {
+            status.textContent = "❌ Virhe lähetyksessä.";
+        }
+
+    } catch (error) {
+        status.textContent = "❌ Yhteysvirhe.";
+        console.error(error);
+    }
+});
+</script>
+</body>
+</html>
